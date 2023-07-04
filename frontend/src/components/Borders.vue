@@ -384,7 +384,7 @@ export default {
 <template>
   <div className="friend_menu" v-if="friend">
     <RouterLink :to="'/profile-user/' + test_friend.id" className="elements_menu" @click="go_to_profile(test_friend.id)" v-if="friend">Profile</RouterLink>
-    <button ref="button" className="elements_menu" v-if="friend" @click="removeFriend(test_friend)">Remove to friend</button>
+    <button ref="button" className="elements_menu" v-if="friend" @click="removeFriend(test_friend)">Unfriend</button>
     <RouterLink :to="'/chat/' + test_friend.id" className="elements_menu" @click="go_to(test_friend.id)" v-if="friend">Chat</RouterLink>
     <!-- <button className="elements_menu" v-if="friend" @click="go_to(test_friend)">Chat</button> -->
     <!-- <button className="elements_menu" v-if="friend">Watch the game</button>

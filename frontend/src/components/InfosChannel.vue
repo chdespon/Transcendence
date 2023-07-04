@@ -184,10 +184,10 @@ export default {
                     <div className="admin_access">
                         <RouterLink :to="'/profile-user/' + user" v-if="infos.admin.find(t => t === user.id)" className="admin">{{ user.login }}</RouterLink>
                         <RouterLink :to="'/profile-user/' + user" v-else className="not_admin">{{ user.login }}</RouterLink>
-                        <button v-if="isAdmin && infos.owner != user.login && me.login != user.login" className="button_admin" @click="ban(user.id)"><font-awesome-icon icon="fa-solid fa-user-xmark" /></button>
-                        <button v-if="isAdmin && infos.owner != user.login && me.login != user.login" className="button_admin" @click="remove(user.id)"><font-awesome-icon icon="fa-solid fa-user-minus" /></button>
-                        <button v-if="isAdmin && infos.owner != user.login && me.login != user.login" className="button_admin" @click="mute(user.id)"><font-awesome-icon icon="fa-solid fa-comment-slash" /></button>
-                        <button v-if="isAdmin && !infos.admin.find(t => t === user.id)" className="button_admin" @click="admin(user.id)"><font-awesome-icon icon="fa-solid fa-user-tie" /></button>
+                        <button v-if="isAdmin && infos.owner != user.login && me.login != user.login" className="button_admin" title="Ban" @click="ban(user.id)"><font-awesome-icon icon="fa-solid fa-user-xmark" /></button>
+                        <button v-if="isAdmin && infos.owner != user.login && me.login != user.login" className="button_admin" title="Kick" @click="remove(user.id)"><font-awesome-icon icon="fa-solid fa-user-minus" /></button>
+                        <button v-if="isAdmin && infos.owner != user.login && me.login != user.login" className="button_admin" title="Mute" @click="mute(user.id)"><font-awesome-icon icon="fa-solid fa-comment-slash" /></button>
+                        <button v-if="isAdmin && !infos.admin.find(t => t === user.id)" className="button_admin" title="Make admin" @click="admin(user.id)"><font-awesome-icon icon="fa-solid fa-user-tie" /></button>
                         <h1 v-if="infos.admin.find(t => t === user.id)" className="admin_info">admin</h1>
                     </div>
                 </li>
